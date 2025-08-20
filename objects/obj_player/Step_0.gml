@@ -8,6 +8,14 @@ xspd = (right_key - left_key) * move_spd;
 yspd = (down_key - up_key) * move_spd;
 
 
+if instance_exists(obj_pauser)
+{
+	xspd = 0;
+	yspd = 0;
+}
+
+
+
 //set sprite
 
 mask_index = sprite[MOVE_DOWN]; //the collision mask is from the MOVE_DOWN sprite
@@ -58,3 +66,6 @@ y += yspd;
 
 
 sprite_index = sprite[face];
+
+//depth
+depth = -bbox_bottom;
